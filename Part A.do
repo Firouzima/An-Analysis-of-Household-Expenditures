@@ -1,15 +1,15 @@
-log using Projectfall0301440203025, append
+log using PartA, append
 
 set more off
 clear all
 cls
 
-cd "E:\Laptop 3\Desktop\University\Metrics I\Project"
+cd "...\University\Metrics I\Project"
 
 *Section 1:
 *a)
 
-use "1398\record1"
+use "Data\record1"
 
 keep female relation hhid married activity leduc age
 
@@ -68,25 +68,25 @@ ttest age if relation == 1, unequal by(female)
 
 clear all
 
-use "1398\tobacco"
+use "Data\tobacco"
 collapse (sum) weight (mean) unitvalue ,by (hhid)
 save tobacco1, replace
 clear all
 
-use "1398\ws"
+use "Data\ws"
 keep if indiv == 1
 collapse (sum) nwsinc_y, by (hhid)
 save ws1, replace
 clear all
 
-use "1398\record2"
+use "Data\record2"
 keep hhid own
 save own1, replace
 clear all
 
 *a)
 
-use "1398\record1"
+use "Data\record1"
 gen var1 = (relation==3 & age<14)
 bysort hhid: egen child_less_14 = max(var1)
 drop var1
