@@ -45,7 +45,7 @@ estat ovtest
 
 *9)
 
-use "E:\Laptop 3\Desktop\University\Metrics I\Project\1398\health"
+use "...\University\Metrics I\Project\Data\health"
 sort hhid
 keep hhid value
 egen missing = rowmiss(_all)
